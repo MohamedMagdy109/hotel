@@ -8,8 +8,9 @@ use App\contact;
 
 use Illuminate\Http\Request;
 
-
 use DB; 
+
+use PDF;
 
 class bookingController extends Controller
 {
@@ -74,8 +75,6 @@ class bookingController extends Controller
        }
        public function contact(Request $req)
         {
-
-
           $FirstName = $req->input('FirstName');
           $LastName = $req->input('LastName');
           $phone = $req->input('phone');
@@ -144,6 +143,19 @@ class bookingController extends Controller
          
        }
        */
+    }
+
+
+    // to download the feedback in type pdf .. go to url -> /fun_pdf
+    public function fun_pdf()
+    {
+      $customers=contact::all();
+      $pdf=PDF::loadView('customerpdf', ['customers'=>$customers]);
+      return $pdf->download('customerpdf.pdf');
+
+
+      
+
     }
   
 }

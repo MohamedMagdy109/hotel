@@ -537,6 +537,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 							<input type="email" class="no-mar" placeholder="Email" name="Email" required="">
 							<textarea placeholder="Message" name="Message" required="" ></textarea>
 							<input type="submit" value="Submit">
+							<!-- ده الزرار اللي هيتحط عند الادمن عشان يحمل الفيدباك ف بي دي اف 
+							<button><a href=" {{URL::to('fun_pdf')}} "> downlod pdf </a></button>
+							-->
 							</form>
 						</div>
 					</div>

@@ -44,3 +44,6 @@ Route::POST('contact/booking','bookingController@contact');
 Route::get('master', function () {
     return view('master'); // dh master saf7a html
 });
+
+
+Route::get('/fun_pdf', 'bookingController@fun_pdf');
