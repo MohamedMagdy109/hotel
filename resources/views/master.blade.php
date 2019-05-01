@@ -10,6 +10,9 @@
 <head>
 <title>Dream Hotel a Hotels and Restaurants Category Flat Bootstrap responsive Website Template | Home :: w3layouts</title>
 
+       
+
+
 <!-- Meta tag Keywords -->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -78,8 +81,7 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 								<li><a href="#services" data-link-alt="services" class="scroll"><span>Services</span></a></li> 
 								<li><a href="#gallery" data-link-alt="gallery" class="scroll"><span>Gallery</span></a></li> 
 								<li><a href="#testimonials" data-link-alt="testimonials" class="scroll"><span>Testimonials</span></a></li> 
-								<li><a href="#contact" data-link-alt="Contact Us" class="scroll"><span>Contact Us</span></a></li>
-								<li><a href="#cancelbooking" data-link-alt="Cancelbooking" class="scroll"><span>cancel booking</span></a></li>  
+								<li><a href="#contact" data-link-alt="Contact Us" class="scroll"><span>Contact Us</span></a></li> 
 							</ul>
 						</nav>
 						
@@ -148,6 +150,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 						<!-- //Modal1 -->
 			</div>
 			<div class="clearfix"></div>
+
+			
+
 </div>		
 		<!--//Slider-->
 
@@ -230,7 +235,16 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 				<div class="w3_main_grid">
 					
 					<div class="w3_main_grid_right">
-						<input type="submit" value="Book Now">
+						<input type="submit" value="Book Now" onclick="showId()">
+					</div>
+					<div class="clearfix"> </div>
+				</div>
+
+                 /***********/
+				<div class="w3_main_grid">
+					
+					<div class="w3_main_grid_right">
+						<INPUT Type="BUTTON" Value="cancel booking" Onclick="C:\xampp\htdocs\Test_laravel\resources\views\destroy.blade">
 					</div>
 					<div class="clearfix"> </div>
 				</div>
@@ -529,10 +543,9 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 			<div class="get-touch" id="contact1">
 					<div class="get-touch-main">
 						<div class="get-touch-bottom">
-							<form action="{{url('/contact/booking')}}" method="post">
-								{{csrf_field()}}
-							<input type="text" placeholder="First Name" name="FirstName" required="">
-							<input type="text" class="no-mar" placeholder="LastName" name="LastName"  required="">
+							<form action="#" method="post">
+							<input type="text" placeholder="First Name" name="First Name" required="">
+							<input type="text" class="no-mar" placeholder="Last Name" required="">
 							<input type="text" placeholder="Phone Number" name="phone" required="">
 							<input type="email" class="no-mar" placeholder="Email" name="Email" required="">
 							<textarea placeholder="Message" name="Message" required="" ></textarea>
@@ -582,39 +595,6 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 		
 </div>
 <!-- //contact -->
-<div class="cancelbooking" id="cancelbooking">
-		<div class="container">
-		<div class="contact-agileits-title"> 
-			<h3>Cancel Booking</h3> 
-		</div>	
-		<div class="clearfix"></div>
-		       <!--get in touch start here-->
-			<div class="get-touch" id="contact1">
-					<div class="get-touch-main">
-						<div class="get-touch-bottom">
-							<form action="{{url('/destroy/booking')}}" method="post">
-								{{csrf_field()}}
-								Enter booking ID:<br>
-								<input type="text" name="id" placeholder="ex : 123 " required="">
-								<br>Enter Your Mail:<br>
-								<input type="email" name="email" placeholder="ex : myname@gmail.com" required="">
-								<br><br>
-								<input type="submit" value="Cancel Booking">
-								
-							</form>
-						</div>
-					</div>
-			</div>
-<!--get in touch end here-->
-	</div>
-
-
-
-
-
-
-</div>
-
 <!--footer-->
 <div class="footer-w3">
 	<p>&copy; 2017 Dream Hotel. All rights reserved | Design by <a href="http://w3layouts.com">W3layouts</a></p>
@@ -692,3 +672,4 @@ function hideURLbar(){ window.scrollTo(0,1); } </script>
 
 </body>
 </html>
+

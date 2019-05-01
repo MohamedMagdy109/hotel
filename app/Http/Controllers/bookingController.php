@@ -1,13 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
 use App\booking;
-
-use App\contact;
-
 use Illuminate\Http\Request;
-
 
 use DB; 
 
@@ -42,7 +37,7 @@ class bookingController extends Controller
 
     public function store(Request $req)
     {
-
+       
 
           $firstName = $req->input('firstName');
           $lastName = $req->input('lastName');
@@ -55,6 +50,8 @@ class bookingController extends Controller
           $numOfguests = $req->input('numOfguests');
           
      
+     
+
           $data = array(
 
             "firstName"=>$firstName,
@@ -68,34 +65,40 @@ class bookingController extends Controller
             "numOfguests"=>$numOfguests,
           );
 
-         $id = 
-         \DB::table('bookings')->insertGetId($data);
-         return $id;
-       }
-       public function contact(Request $req)
-        {
+         $ids = \DB::table('bookings')->insertGetId($data);
+           
+           /* "your id is "; 
+        return $id;
+        */
+     /*   <script type="text/javascript">
+             alert("your id is", return $id);
+        </script1>
+       */
+     //   dd($ids );
+       // return $ids;
+        //return View::make($id); 
+        //return View::make('index')->with('ids',$ids); 
+     // return view('master')->with($ids);   //////
+      return view('destroy', ['ids'=>$ids]);
 
+         //return view("master", ['students'=>$ids]);
+       // return view("master",compact('ids'));
 
-          $FirstName = $req->input('FirstName');
-          $LastName = $req->input('LastName');
-          $phone = $req->input('phone');
-          $Email = $req->input('Email');
-          $Message = $req->input('Message');
-          
-          $data = array(
+     //  return view('destroy');
+    }  
+    
+    public function getid(){
+       return $id;
 
-            "FirstName"=>$FirstName,
-            "LastName"=>$LastName,
-            "phone"=>$phone,
-            "Email"=>$Email,
-            "Message"=>$Message,
-          );
-          \DB::table('contact')->insertGetId($data);
-        }
+    }
+    
 
-
-          
-
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
     public function show($id)
     {
         //
@@ -130,20 +133,9 @@ class bookingController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-     public function destroy(Request $request)
+    public function destroy($id)
+
     {
-     DB::table('bookings')
-     ->where('id',request('id'))
-     ->where('email',request('email'))
-     ->delete();
-      return back();
-       /*
-      if (id::where('id', '=', Input::get('id'))->exists()) 
-      {
-        DB::table('bookings')->where($id, '=', 'id')->delete(); 
-         
-       }
-       */
+        
     }
-  
 }

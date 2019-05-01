@@ -35,12 +35,15 @@ $network->save();
 
 //Route::POST('/insert','Controller@insert');
 
-Route::POST('add/booking','bookingController@store'); //DE EL METHOD ELY MWGODA F SAF7A HTML ,BOOKING CONTROOLER DE SAF7A CONTROLLER W STORE DE ASM FUNCTION
-Route::POST('destroy/booking','bookingController@destroy');
-Route::POST('contact/booking','bookingController@contact');
+Route::POST('add/booking','bookingController@store'); /// sf7t add booking , kode php bta3ha gwa booking controller @ al function aly sha8al 3lyha asmha store
 
 //Route::resource('booking','bookingController');
 
 Route::get('master', function () {
-    return view('master'); // dh master saf7a html
+    return view('master');
+});
+
+
+Route::get('destroy', function () {
+    return view('destroy');
 });
